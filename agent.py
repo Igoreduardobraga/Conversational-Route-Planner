@@ -1,5 +1,5 @@
 from smolagents import CodeAgent, LiteLLMModel, Tool, FinalAnswerTool
-from search import shortest_path, format_route
+from search import shortest_path, format_route, plot_route
 
 class FindRouteTool(Tool):
     name = "find_route"
@@ -19,6 +19,7 @@ class FindRouteTool(Tool):
 
     def forward(self, source, target):
         route = shortest_path(source, target)
+        plot_route(route)
         return format_route(route)
 
 
