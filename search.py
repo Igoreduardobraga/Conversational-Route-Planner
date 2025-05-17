@@ -25,22 +25,39 @@ def shortest_path(source, target):
 def plot_route(route):
     fig, ax = ox.plot_graph_route(G, route, route_linewidth=4, node_size=0)
     plt.show()
+    
+
+def route_street_names(G, route):
+    street_names = []
+    for u, v in zip(route[:-1], route[1:]):
+        edge_data = G.get_edge_data(u, v, 0)
+
+        if edge_data is None:
+            continue
+
+        name = edge_data.get('name', None)
+
+        if isinstance(name, list):
+            name = ", ".join(name)
+        if name is None:
+            name = "Unnamed Road"
+
+        if not street_names or street_names[-1] != name:
+            street_names.append(name)
+
+    return street_names
 
 
 def format_route(route):
     if isinstance(route, str):
         return route
 
-    coords = [(G.nodes[n]['y'], G.nodes[n]['x']) for n in route]
-    n_points = len(coords)
+    streets = route_street_names(G, route)
+    n_streets = len(streets)
 
-    if n_points <= 6:
-        coords_str = ", ".join([f"({y:.5f}, {x:.5f})" for y, x in coords])
-    else:
-        first_points = ", ".join(
-            [f"({y:.5f}, {x:.5f})" for y, x in coords[:3]])
-        last_points = ", ".join(
-            [f"({y:.5f}, {x:.5f})" for y, x in coords[-3:]])
-        coords_str = f"{first_points} ... {last_points}"
+    if n_streets == 0:
+        return "No street names found on the route."
 
-    return f"Path with {n_points} points: {coords_str}"
+    streets_str = " -> ".join(streets)
+
+    return f"Route with {len(streets)} street segments: {streets_str}"
