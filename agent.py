@@ -1,5 +1,5 @@
 from smolagents import CodeAgent, LiteLLMModel, Tool, FinalAnswerTool
-
+from search import shortest_path, format_route
 
 class FindRouteTool(Tool):
     name = "find_route"
@@ -18,7 +18,8 @@ class FindRouteTool(Tool):
     output_type = "string"
 
     def forward(self, source, target):
-        return f"The shortest path from {source} to {target} is ..."
+        route = shortest_path(source, target)
+        return format_route(route)
 
 
 model = LiteLLMModel(
@@ -28,4 +29,4 @@ model = LiteLLMModel(
 )
 
 agent = CodeAgent(tools=[FindRouteTool()], model=model, add_base_tools=False)
-agent.run("How can I go from Margô Drinkeria to Berilo Cozinha & Drinks")
+agent.run("How can I go from Praça Sete to Praça da Liberdade")
