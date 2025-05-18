@@ -34,4 +34,4 @@ model = LiteLLMModel(
 )
 
 agent = CodeAgent(tools=[FindRouteTool()], model=model, add_base_tools=False)
-agent.run("How can I go from Praça Sete to Praça da Liberdade")
+agent.run("How can I go from Xapuri to Maria das Tranças")
