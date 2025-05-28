@@ -4,7 +4,7 @@ Este projeto implementa um **agente conversacional** especializado em sugerir ro
 
 O agente interage com o usuário e planeja rotas através de dois algoritmos: **Busca em Largura (BFS)** e **A**\*, utilizando um grafo gerado com dados do **OpenStreetMap** através da biblioteca **OSMnx**.
 
-## ⚙️ Tecnologias utilizadas
+## Tecnologias utilizadas
 
 * **Python**
 * **OSMnx** — para construção e manipulação de grafos geográficos.
@@ -15,7 +15,7 @@ O agente interage com o usuário e planeja rotas através de dois algoritmos: **
 * **imageio** — para geração de GIFs.
 * **scikit-learn** — suporte a operações diversas.
 
-## 📦 Instalação
+## Instalação
 
 Requisitos: Python >= 3.8
 
@@ -25,7 +25,7 @@ Instale as dependências com:
 pip install osmnx networkx matplotlib smolagents imageio "smolagents[litellm]" scikit-learn
 ```
 
-## 🗜️ Funcionamento
+## Funcionamento
 
 1. **Construção do Grafo**:
 
