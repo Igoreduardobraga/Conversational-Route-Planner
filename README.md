@@ -4,8 +4,6 @@ Este projeto implementa um **agente conversacional** especializado em sugerir ro
 
 O agente interage com o usuário e planeja rotas através de dois algoritmos: **Busca em Largura (BFS)** e **A**\*, utilizando um grafo gerado com dados do **OpenStreetMap** através da biblioteca **OSMnx**.
 
----
-
 ## ⚙️ Tecnologias utilizadas
 
 * **Python**
@@ -17,8 +15,6 @@ O agente interage com o usuário e planeja rotas através de dois algoritmos: **
 * **imageio** — para geração de GIFs.
 * **scikit-learn** — suporte a operações diversas.
 
----
-
 ## 📦 Instalação
 
 Requisitos: Python >= 3.8
@@ -28,8 +24,6 @@ Instale as dependências com:
 ```bash
 pip install osmnx networkx matplotlib smolagents imageio "smolagents[litellm]" scikit-learn
 ```
-
----
 
 ## 🗜️ Funcionamento
 
@@ -56,8 +50,6 @@ pip install osmnx networkx matplotlib smolagents imageio "smolagents[litellm]" s
    * Geração de gráficos comparativos.
    * Avaliação de eficiência dos algoritmos.
 
----
-
 # Como executar
 
 1. Clone o repositório:
@@ -82,30 +74,20 @@ print("Olá! Eu sou um agente inteligente de rotas entre restaurantes para Belo 
    * Gráfico comparativo.
    * (Opcional) GIF da rota.
 
----
-
-Análises gráficas:
+# Análises gráficas:
 
 * **Relação entre número de passos e distância** para cada algoritmo.
 * **Comparação entre BFS e A**\* em termos de eficiência.
-
----
 
 ## Visualizações
 
 * Exibição das rotas traçadas diretamente sobre o grafo.
 * Geração de **GIFs animados** mostrando o progresso da rota.
 
----
-
 ## Arquitetura do projeto
 
 * **Extração de dados** → **Construção do grafo** → **Implementação dos algoritmos** → **Criação do agente** → **Análises e visualização**.
 
----
-
 ## Licença
 
 Este projeto é de uso acadêmico, desenvolvido para a disciplina de **Introdução à Inteligência Artificial**.
-
----
